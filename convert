@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+echo "1) Ft to meters"
+echo "2) Meters ft"
+echo "3) Miles to km"
+echo "4) Km to miles"
+echo "5) Km/hr to m/s"
+echo "6) M/s to km/hr"
+echo "7) Km to astronomical unit"
+echo "8) Astronomical unit to km"
+read -p "Choose a conversion type: " choice
+
+read -p "Enter the number to convert: " num
+
+case $choice in
+	1)res=`echo "$num * 0.3048" | bc`
+	;;
+	2)res=`echo "$num * 3.28084" | bc`
+	;;
+	3)res=`echo "$num * 1.609344" | bc`
+	;;
+	4)res=`echo "$num * 0.6213712" | bc`
+	;;
+	5)res=`echo "$num * 0.278" | bc`
+	;;
+	6)res=`echo "$num * 3.6000" | bc`
+	;;
+	7)res=`echo "$num * 0.000000006684587" | bc`
+	;;
+	8)res=`echo "$num * 149597900.0" | bc`
+	;;
+
+esac
+echo "Result : $res"
